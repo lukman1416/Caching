@@ -20,7 +20,8 @@ for n in range(1000):
         else:
             break
     value = random_string(20)
-    cache.sett(key, value)
+    cache.set(key, value)
     print("After {} iterations, cache has {} entries".format(n+1, cache.size()))
+    print(key)
 
 

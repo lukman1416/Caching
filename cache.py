@@ -1,16 +1,14 @@
-#cache.py
+# cache.py
 
 import datetime
 
-MAX_CACHE_SIZE = 100
-_cache = {}
+MAX_CACHE_SIZE = 100 # Maximum number of entries in the cache.
 
-##################################################
-
+#############################################################################
 
 def init():
     global _cache
-    _cache = {}
+    _cache = {} # Maps key to (timestamp, value) tuple.
 
 
 def set(key, value):
@@ -28,6 +26,13 @@ def get(key):
     else:
         return None
 
+def contains(key):
+    global _cache
+    if key in _cache:
+        _cache[0] = datetime.datetime.now()
+        return _cache[key][1]
+    else:
+        return None
 
 def size():
     global _cache
